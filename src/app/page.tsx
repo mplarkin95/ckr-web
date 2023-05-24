@@ -1,6 +1,7 @@
 import { Artist } from "@/types/Artist";
+import Link from "next/link";
 
-const index: React.FC = () => {
+const Index = () => {
   const artists: Artist[] = [
     { id: 1, name: "John Doe" },
     { id: 2, name: "Jane Doe" },
@@ -9,12 +10,12 @@ const index: React.FC = () => {
     <div>
       <h1>Index</h1>
       {artists.map((artist) => (
-        <div key={artist.id}>
+        <Link key={artist.id} href={`/artists/${artist.id}`}>
           <h2>{artist.name}</h2>
-        </div>
+        </Link>
       ))}
     </div>
   );
 };
 
-export default index;
+export default Index;
