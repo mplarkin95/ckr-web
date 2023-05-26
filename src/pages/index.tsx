@@ -1,29 +1,13 @@
-import { getArtists } from "@/data/queries/artists";
-import { transformArtistsFull } from "@/data/transformers/artist";
-import { Artist } from "@/types/Artist";
 import Link from "next/link";
 
-const Index = ({ artists }: { artists: Artist[] }) => {
+const Index = () => {
   return (
-    <div>
-      <h1>Index</h1>
-      {artists.map((artist) => (
-        <Link key={artist.id} href={`/artists/${artist.slug}`}>
-          <h2>{artist.name}</h2>
-        </Link>
-      ))}
+    <div className="flex flex-col">
+      <Link href="/artists">Artists</Link>
+      <Link href="/releases">Releases</Link>
+      <Link href="/about">About</Link>
     </div>
   );
 };
-
-export async function getStaticProps() {
-  const res = await getArtists();
-  const artists = transformArtistsFull(res);
-  return {
-    props: {
-      artists,
-    },
-  };
-}
 
 export default Index;

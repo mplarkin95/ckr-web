@@ -6,7 +6,7 @@ import Link from "next/link";
 const AllArtist = ({ artists }: { artists: Artist[] }) => {
   return (
     <div>
-      <h1>Index</h1>
+      <h1>Artists</h1>
       {artists.map((artist) => (
         <Link key={artist.id} href={`/artists/${artist.slug}`}>
           <h2>{artist.name}</h2>
