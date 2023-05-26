@@ -1,6 +1,6 @@
 import { TypeAlbumSkeleton } from "@/types/contentful.ts";
 import contentfulClient from "../contentfulClient";
-export const getArtists = async () => {
+export const getAlbums = async () => {
   const response = await contentfulClient.getEntries<TypeAlbumSkeleton>({
     content_type: "album",
   });
@@ -8,7 +8,7 @@ export const getArtists = async () => {
   return response.items;
 };
 
-export const getArtistBySlug = async (slug: string) => {
+export const getAlbumBySlug = async (slug: string) => {
   const response = await contentfulClient.getEntries<TypeAlbumSkeleton>({
     content_type: "album",
     "fields.slug": slug,
