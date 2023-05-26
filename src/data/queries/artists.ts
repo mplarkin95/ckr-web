@@ -7,3 +7,12 @@ export const getArtists = async () => {
 
   return response.items;
 };
+
+export const getArtistBySlug = async (slug: string) => {
+  const response = await contentfulClient.getEntries<TypeArtistSkeleton>({
+    content_type: "artist",
+    "fields.slug": slug,
+  });
+
+  return response.items[0];
+};

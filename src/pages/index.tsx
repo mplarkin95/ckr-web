@@ -8,7 +8,7 @@ const Index = ({ artists }: { artists: Artist[] }) => {
     <div>
       <h1>Index</h1>
       {artists.map((artist) => (
-        <Link key={artist.id} href={`/artists/${artist.id}`}>
+        <Link key={artist.id} href={`/artists/${artist.slug}`}>
           <h2>{artist.name}</h2>
         </Link>
       ))}
