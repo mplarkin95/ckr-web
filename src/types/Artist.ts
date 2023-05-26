@@ -1,7 +1,5 @@
 export interface Artist {
   id: string;
-  name?: string;
+  name: string;
   slug: string;
 }
-
-export interface ArtistAPI {}
