@@ -10,16 +10,6 @@ const IndividualArtist = ({ artist }: { artist: Artist }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const res = await getArtists();
-  const slugs = res.map((artist) => artist.fields.slug);
-  const paths = slugs.map((slug) => ({ params: { slug } }));
-  return {
-    paths,
-    fallback: true,
-  };
-}
-
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const res = await getArtistBySlug(slug);
@@ -28,6 +18,16 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
     props: {
       artist,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const res = await getArtists();
+  const slugs = res.map((artist) => artist.fields.slug);
+  const paths = slugs.map((slug) => ({ params: { slug } }));
+  return {
+    paths,
+    fallback: false,
   };
 }
 
