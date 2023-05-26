@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Index = ({ artists }: { artists: Artist[] }) => {
   return (
-    <div className="h-screen">
+    <div>
       <h1>Index</h1>
       {artists.map((artist) => (
         <Link key={artist.id} href={`/artists/${artist.id}`}>
