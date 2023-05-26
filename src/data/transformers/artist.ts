@@ -11,6 +11,6 @@ export const transformArtist = (
   apiArtist: TypeArtist<undefined, "">
 ): Artist => ({
   id: apiArtist.sys.id,
-  name: apiArtist.fields.name || "",
+  name: apiArtist.fields.name,
   slug: apiArtist.fields.slug,
 });

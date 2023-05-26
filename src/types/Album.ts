@@ -1,5 +1,5 @@
 export interface Album {
   id: string;
-  name?: string;
+  name: string;
   slug: string;
 }
