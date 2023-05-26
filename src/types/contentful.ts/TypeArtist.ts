@@ -11,10 +11,11 @@ export interface TypeArtistFields {
   bio?: EntryFieldTypes.RichText;
   profilePicture?: EntryFieldTypes.AssetLink;
   socials?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+  slug: EntryFieldTypes.Symbol;
 }
 
 export type TypeArtistSkeleton = EntrySkeletonType<TypeArtistFields, "artist">;
 export type TypeArtist<
-  Modifiers extends ChainModifiers = ChainModifiers,
-  Locales extends LocaleCode = LocaleCode
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode
 > = Entry<TypeArtistSkeleton, Modifiers, Locales>;

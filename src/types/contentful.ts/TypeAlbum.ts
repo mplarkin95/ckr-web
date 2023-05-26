@@ -10,6 +10,7 @@ export interface TypeAlbumFields {
   name?: EntryFieldTypes.Symbol;
   artist?: EntryFieldTypes.EntryLink<EntrySkeletonType>;
   albumDescription?: EntryFieldTypes.RichText;
+  slug: EntryFieldTypes.Symbol;
 }
 
 export type TypeAlbumSkeleton = EntrySkeletonType<TypeAlbumFields, "album">;
