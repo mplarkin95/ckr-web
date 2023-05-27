@@ -4,8 +4,10 @@ import { Artist } from "@/types/Artist";
 
 const IndividualArtist = ({ artist }: { artist: Artist }) => {
   return (
-    <div>
-      <h1>{artist.name}</h1>
+    <div className="w-2/4">
+      <marquee behavior="alternate">
+        <h1 style={{ fontSize: "80px" }}>{artist.name}</h1>
+      </marquee>
     </div>
   );
 };
