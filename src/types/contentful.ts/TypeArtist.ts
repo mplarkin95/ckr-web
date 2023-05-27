@@ -2,10 +2,10 @@ import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleC
 
 export interface TypeArtistFields {
     name: EntryFieldTypes.Symbol;
-    bio?: EntryFieldTypes.RichText;
     profilePicture?: EntryFieldTypes.AssetLink;
     socials?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
     slug: EntryFieldTypes.Symbol;
+    bio?: EntryFieldTypes.Text;
 }
 
 export type TypeArtistSkeleton = EntrySkeletonType<TypeArtistFields, "artist">;
