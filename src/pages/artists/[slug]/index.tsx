@@ -1,15 +1,10 @@
+import ArtistPage from "@/components/Artist/ArtistPage";
 import { getArtistBySlug, getArtists } from "@/data/queries/artists";
 import { transformArtist } from "@/data/transformers/artist";
 import { Artist } from "@/types/Artist";
 
 const IndividualArtist = ({ artist }: { artist: Artist }) => {
-  return (
-    <div className="w-2/4">
-      <marquee behavior="alternate">
-        <h1 style={{ fontSize: "80px" }}>{artist.name}</h1>
-      </marquee>
-    </div>
-  );
+  return <ArtistPage artist={artist} />;
 };
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {

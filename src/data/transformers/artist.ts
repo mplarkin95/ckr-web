@@ -13,4 +13,5 @@ export const transformArtist = (
   id: apiArtist.sys.id,
   name: apiArtist.fields.name,
   slug: apiArtist.fields.slug,
+  bio: apiArtist.fields.bio || "",
 });
