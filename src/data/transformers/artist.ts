@@ -1,5 +1,6 @@
 import { Artist } from "@/types/Artist";
-import { TypeArtist } from "@/types/contentful.ts";
+import { TypeArtist, TypeArtistFields } from "@/types/contentful.ts";
+import { Asset } from "contentful";
 
 export const transformArtistsFull = (
   apiArtists: TypeArtist<undefined, "">[]
@@ -14,4 +15,8 @@ export const transformArtist = (
   name: apiArtist.fields.name,
   slug: apiArtist.fields.slug,
   bio: apiArtist.fields.bio || "",
+  profilePicture: apiArtist.fields.profilePicture
+    ? (apiArtist.fields.profilePicture as Asset<undefined, "">)?.fields?.file
+        ?.url
+    : "",
 });
