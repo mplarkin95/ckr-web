@@ -6,4 +6,5 @@ export interface Artist {
   slug: string;
   profilePicture?: string;
   bio?: string;
+  socials?: string[];
 }

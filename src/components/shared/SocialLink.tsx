@@ -21,3 +21,5 @@ const SocialLink = ({ href }: { href: string }) => {
   }
   return <Link href={href}>{displayString}</Link>;
 };
+
+export default SocialLink;

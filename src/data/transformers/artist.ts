@@ -19,4 +19,5 @@ export const transformArtist = (
     ? (apiArtist.fields.profilePicture as Asset<undefined, "">)?.fields?.file
         ?.url
     : "",
+  socials: apiArtist.fields.socials || [],
 });

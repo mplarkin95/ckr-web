@@ -5,9 +5,9 @@ import Header from "./Header";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen w-full">
       <Header />
-      <div className="h-full justify-center flex">{children}</div>
+      <div className="container mx-auto">{children}</div>
       <Footer />
     </div>
   );
