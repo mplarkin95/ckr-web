@@ -7,11 +7,11 @@ const Header = () => {
       <div className="flex flex-row h-full">
         <Link href="/" className="h-full">
           <Image
-            src={"/images/LOGOPLACEHOLDER.png"}
+            src={"/images/CKRFULL.png"}
             alt="logo"
-            className="h-full"
             width={100}
             height={100}
+            className="object-cover w-full my-auto"
           />
         </Link>
       </div>
