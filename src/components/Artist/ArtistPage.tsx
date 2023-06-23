@@ -8,6 +8,18 @@ const ArtistPage = ({ artist }: { artist: Artist }) => {
     <div className="flex flex-col w-full">
       <div className="w-full">
         <h1>{artist.name}</h1>
+        <div className="flex flex-col md:flex-row">
+          {artist.profilePicture && (
+            <div className="w-full md:w-1/2">
+              <Image
+                alt={"dum"}
+                src={`https:${artist.profilePicture}`}
+                width={200}
+                height={200}
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

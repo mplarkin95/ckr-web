@@ -17,7 +17,7 @@ export const transformArtist = (
   bio: apiArtist.fields.bio || "",
   profilePicture: apiArtist.fields.profilePicture
     ? (apiArtist.fields.profilePicture as Asset<undefined, "">)?.fields?.file
-        ?.url
+        ?.url || ""
     : "",
   socials: apiArtist.fields.socials || [],
 });
