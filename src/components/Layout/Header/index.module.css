@@ -1,0 +1,12 @@
+.headerBG {
+  background-color: var(--background-start-rgb);
+  transition: height 0.5s ease-in-out;
+}
+
+.heightSmall {
+  height: 3rem;
+}
+
+.heightLarge {
+  height: 5rem;
+}
