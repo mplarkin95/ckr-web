@@ -1,6 +1,32 @@
+@keyframes glitch {
+  0% {
+    background-position-x: 15px;
+    background-position-y: 15px;
+    filter: hue-rotate(270deg) saturate(200%);
+  }
+  1% {
+    background-position-x: -10px;
+    background-position-y: 5px;
+    filter: hue-rotate(330deg) saturate(5000%) contrast(500%);
+  }
+  2% {
+    background-position-x: 12px;
+    background-position-y: -10px;
+    filter: hue-rotate(10deg) saturate(60000%);
+  }
+  3% {
+    background-position: 0;
+    filter: hue-rotate(0deg);
+  }
+}
 .imageContainer {
   background-image: url("/images/SplashLogo.png");
-  background-size: cover;
+  background-size: contain;
+  animation-name: glitch;
+  animation-duration: 10s;
+  background-position: 0;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
 }
 
 .footer {
