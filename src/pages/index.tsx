@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { Splash } from "@/components/Splash/Splash";
 
 const Index = () => {
-  return <div className="flex flex-col">logo, sg</div>;
+  return <Splash />;
 };
 
 export default Index;

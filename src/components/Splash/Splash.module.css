@@ -1,0 +1,27 @@
+.imageContainer {
+  background-image: url("/images/SplashLogo.png");
+  background-size: cover;
+}
+
+.footer {
+  border-top: 2px rgba(255, 255, 255, 0.691) solid;
+  border-color: white;
+  padding: 1rem;
+}
+
+.footerContainer {
+  position: absolute;
+  width: 100%;
+  bottom: 1.75rem;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.iconContainer *:hover {
+  color: #ffbb00;
+}

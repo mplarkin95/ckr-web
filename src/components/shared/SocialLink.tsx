@@ -18,6 +18,8 @@ const SocialLink = ({ href }: { href: string }) => {
     displayString = "Spotify";
   } else if (href.includes("apple")) {
     displayString = "Apple Music";
+  } else if (href.includes("mailto")) {
+    displayString = "Email";
   }
   return <Link href={href}>{displayString}</Link>;
 };
