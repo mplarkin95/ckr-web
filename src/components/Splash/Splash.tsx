@@ -16,7 +16,7 @@ export const Splash: React.FC = () => {
             className="object-cover w-full h-full my-auto"
           />
         </div>
-        <div className={`mx-auto w-fit`}>Coming soon</div>
+        <div className={`mx-auto w-fit`}>COMING SOON</div>
       </div>
       <div className={styles.footerContainer}>
         <div className={`flex w-10/12 lg:w-3/4 mx-auto ${styles.footer}`}>
