@@ -1,25 +1,28 @@
 import Link from "next/link";
 
-const SocialLink = ({ href }: { href: string }) => {
-  let displayString = "Website";
+const SocialLink = ({ href, icon }: { href: string; icon: boolean }) => {
+  let displayString: string | JSX.Element;
+
   if (href.includes("facebook")) {
-    displayString = "Facebook";
+    displayString = icon ? <i className="fa fa-facebook" /> : "Facebook";
   } else if (href.includes("instagram")) {
-    displayString = "Instagram";
+    displayString = icon ? <i className="fa fa-instagram" /> : "Instagram";
   } else if (href.includes("twitter")) {
-    displayString = "Twitter";
+    displayString = icon ? <i className="fa fa-twitter" /> : "Twitter";
   } else if (href.includes("youtube")) {
-    displayString = "YouTube";
+    displayString = icon ? <i className="fa fa-youtube" /> : "YouTube";
   } else if (href.includes("soundcloud")) {
-    displayString = "SoundCloud";
+    displayString = icon ? <i className="fa fa-soundcloud" /> : "SoundCloud";
   } else if (href.includes("bandcamp")) {
-    displayString = "Bandcamp";
+    displayString = icon ? <i className="fa fa-bandcamp" /> : "Bandcamp";
   } else if (href.includes("spotify")) {
-    displayString = "Spotify";
+    displayString = icon ? <i className="fa fa-spotify" /> : "Spotify";
   } else if (href.includes("apple")) {
-    displayString = "Apple Music";
+    displayString = icon ? <i className="fa fa-apple" /> : "Apple Music";
   } else if (href.includes("mailto")) {
-    displayString = "Email";
+    displayString = icon ? <i className="fa fa-envelope" /> : "Email";
+  } else {
+    displayString = icon ? <i className="fa fa-globe" /> : "Website";
   }
   return <Link href={href}>{displayString}</Link>;
 };
