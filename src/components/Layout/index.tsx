@@ -5,7 +5,7 @@ import Header from "./Header";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full h-screen">
       <Header />
       <div className="container mx-auto min-h-1/2 mt-20">{children}</div>
       <Footer />

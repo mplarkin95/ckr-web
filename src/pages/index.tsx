@@ -1,7 +1,5 @@
-import { Splash } from "@/components/Splash/Splash";
-
 const Index = () => {
-  return <Splash />;
+  return <div>This is content</div>;
 };
 
 export default Index;
