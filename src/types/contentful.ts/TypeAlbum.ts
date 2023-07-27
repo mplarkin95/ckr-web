@@ -6,6 +6,7 @@ export interface TypeAlbumFields {
     slug: EntryFieldTypes.Symbol;
     links?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
     albumDescription?: EntryFieldTypes.Text;
+    featuredRelease?: EntryFieldTypes.Boolean;
 }
 
 export type TypeAlbumSkeleton = EntrySkeletonType<TypeAlbumFields, "album">;
