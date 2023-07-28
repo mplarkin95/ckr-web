@@ -8,6 +8,14 @@ export const transformReleasesFull = (
   return apiReleases.map(transformRelease);
 };
 
+const dateTransform = (date: string) => {
+  const dateObj = new Date(date);
+  const year = dateObj.getFullYear();
+  const month = dateObj.getMonth() + 1;
+  const day = dateObj.getDate();
+
+  return `${month}/${day}/${year}`;
+};
 export const transformRelease = (
   apiRelease: TypeRelease<undefined, "">
 ): Release => ({
@@ -17,5 +25,5 @@ export const transformRelease = (
   image: apiRelease.fields.image
     ? (apiRelease.fields.image as Asset<undefined, "">)?.fields?.file?.url || ""
     : "",
-  releaseDate: apiRelease.fields.releaseDate,
+  releaseDate: dateTransform(apiRelease.fields.releaseDate),
 });

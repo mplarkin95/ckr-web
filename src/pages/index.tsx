@@ -1,3 +1,4 @@
+import ReleaseCard from "@/components/Release/ReleaseCard";
 import { getReleases } from "@/data/queries/releases";
 import { transformReleasesFull } from "@/data/transformers/release";
 import { Release } from "@/types/Release";
@@ -8,10 +9,7 @@ const Index = ({ releases }: { releases: Release[] }) => {
     <div>
       <h1>Releases</h1>
       {releases.map((release) => (
-        <>
-          <h2 key={release.id}>{release.title}</h2>
-          <Markdown>{release.copywrite}</Markdown>
-        </>
+        <ReleaseCard key={release.id} release={release} />
       ))}
     </div>
   );

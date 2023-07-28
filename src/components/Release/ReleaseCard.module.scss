@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .date {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .image {
+      flex: 1;
+    }
+    .description {
+      flex: 2;
+      padding: 0 1rem;
+    }
+  }
+}
