@@ -5,7 +5,7 @@ import { Staff } from "@/types/Staff";
 
 const About = ({ staff }: { staff: Staff[] }) => {
   return (
-    <div>
+    <div className="flex-col h-full">
       <StaffContainer staff={staff} />
     </div>
   );
