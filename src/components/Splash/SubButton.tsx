@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { FormEventHandler, useMemo, useState } from "react";
 
 const validateEmail = (email: string) => {
   return email.match(
@@ -9,7 +9,7 @@ const validateEmail = (email: string) => {
 };
 
 const SubButton = () => {
-  const [input, setInput] = useState("mplarkin95@gmail.com");
+  const [input, setInput] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState("");
@@ -19,8 +19,7 @@ const SubButton = () => {
     setError("");
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     if (!validateEmail(input)) {
       setError("Please use a valid email");
       return;
@@ -62,30 +61,38 @@ const SubButton = () => {
 
   return (
     <div className="flex flex-col w-full ">
-      {!isProcessing && !isSubscribed && (
-        <input
-          value={input}
-          onChange={handleInput}
-          placeholder="Subscribe to our newsletter"
-          className="w-1/2 mx-auto mt-10 p-2 border-2 border-black rounded-md text-black"
-          disabled={isProcessing}
-        />
-      )}
-      {!!error && (
-        <div role="alert" className="w-1/4 mx-auto">
-          <div className="border border-red-400 rounded-b px-1 py-1 my-2 text-red-700">
-            <p className="text-center">{error}</p>
-          </div>
-        </div>
-      )}
-
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        className="w-1/4 mx-auto mt-5 p-2 border-2 border-black rounded-md"
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+        className="flex flex-col w-full "
       >
-        {buttonText}
-      </button>
+        {!isProcessing && !isSubscribed && (
+          <input
+            value={input}
+            onChange={handleInput}
+            placeholder="Subscribe to our newsletter"
+            className="w-3/4 lg:w-1/2  mx-auto mt-10 p-2 border-2 border-black rounded-md text-black"
+            disabled={isProcessing}
+          />
+        )}
+        {!!error && (
+          <div role="alert" className="w-3/4 lg:w-1/4 mx-auto">
+            <div className="border border-red-400 rounded-b px-1 py-1 my-2 text-red-700">
+              <p className="text-center">{error}</p>
+            </div>
+          </div>
+        )}
+
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="w-1/4 mx-auto mt-5 p-2 border-2 border-black rounded-md"
+        >
+          {buttonText}
+        </button>
+      </form>
     </div>
   );
 };
