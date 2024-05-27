@@ -20,12 +20,15 @@ const SubButton = () => {
   };
 
   const handleSubmit = () => {
+    if (isProcessing) {
+      return;
+    }
     if (!validateEmail(input)) {
       setError("Please use a valid email");
       return;
     }
     setIsProcessing(true);
-    console.log(input);
+    setError("");
     fetch(`/api/subscribe`, {
       method: "POST",
       headers: {
@@ -40,8 +43,13 @@ const SubButton = () => {
           setIsSubscribed(true);
           setIsProcessing(false);
         } else {
-          setError("Something went wrong. Please try again.");
-          setIsProcessing(false);
+          if (res.status === 409) {
+            setIsProcessing(false);
+            setIsSubscribed(true);
+          } else {
+            setError("Something went wrong. Please try again.");
+            setIsProcessing(false);
+          }
         }
       })
       .catch((e) => {
@@ -88,7 +96,8 @@ const SubButton = () => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="w-1/4 mx-auto mt-5 p-2 border-2 border-black rounded-md"
+          className="w-1/2 lg:w-1/4 mx-auto mt-5 p-2 border-2 border-black rounded-md"
+          disabled={isSubscribed || isProcessing}
         >
           {buttonText}
         </button>

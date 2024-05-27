@@ -4,7 +4,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(req.body);
   var options = {
     method: "POST",
     headers: {
